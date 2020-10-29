@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val RRS_link = "https://depor.com/feed";
+    private val RRS_link = "https://depor.com/arcio/rss";
     private val RRS_to_JSON_API = " https://api.rss2json.com/v1/api.json?rss_url=";
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun readRSS() { showLoading()
+    private fun readRSS() {
+        showLoading()
        val loadRSSAsync = object:AsyncTask<String,String,String>(){
 
            override fun onPostExecute(result: String?) {
